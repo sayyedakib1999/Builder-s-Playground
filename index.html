@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder's Playground</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="grid-diagonal"></div>
+    <div class="grid-dots"></div>
+    <div class="container">
+        <header>
+            <h1>Builder's Playground</h1>
+            <p class="subtitle">Think of it as your local café  but instead of coffee, we serve up AI hacks, no-code tricks, and low-code wizardry. BYO curiosity. No gatekeeping allowed.</p>
+        </header>
+
+        <main>
+            <button id="inviteBtn" class="cta-button">Get Invite</button>
+
+            <div id="inviteForm" class="form-container hidden">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Invite</button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
