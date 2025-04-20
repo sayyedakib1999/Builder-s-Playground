@@ -3,11 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const inviteForm = document.getElementById('inviteForm');
     const contactForm = document.getElementById('contactForm');
 
+    // Show the form when "Get Invite" is clicked
     inviteBtn.addEventListener('click', () => {
         inviteForm.classList.remove('hidden');
         inviteBtn.classList.add('hidden');
     });
 
+    // Handle form submission
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -20,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append("mobile", mobile);
         formData.append("email", email);
 
-        fetch("https://script.google.com/macros/s/AKfycbwlwkUqE9XeTMxs4kC-K6YUtq7RSRkmDdJtvNB_7bw2FHruDWXOdHIGVWupI3z5PhGNag/exec", {
+        // ✅ Your NEW Google Apps Script URL goes here
+        fetch("https://script.google.com/macros/s/AKfycbzCzQwVTfS1_JOow99Q6ur-srEiuaROSJ-JcXHM8EYHJg0AVtiXcsoNz5OTSl1NX7QUCQ/exec", {
             method: "POST",
             body: formData
         })
