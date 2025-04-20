@@ -3,13 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const inviteForm = document.getElementById('inviteForm');
     const contactForm = document.getElementById('contactForm');
 
-    // Show form when "Get Invite" button is clicked
     inviteBtn.addEventListener('click', () => {
         inviteForm.classList.remove('hidden');
         inviteBtn.classList.add('hidden');
     });
 
-    // Handle form submission
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -35,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             console.error('Error!', error.message);
-            alert("Something went wrong. Try again later.");
+            alert("Uh-oh! Something went sideways. Try again later.");
         });
     });
 });
