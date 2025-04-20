@@ -12,19 +12,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle form submission
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const name = document.getElementById('name').value;
         const mobile = document.getElementById('mobile').value;
         const email = document.getElementById('email').value;
 
-        // Here you would typically send the data to your server
-        // For now, we'll just show the success message
-        alert(`Thanks, ${name}! Your invite is on the way 🚀`);
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("mobile", mobile);
+        formData.append("email", email);
 
-        // Reset form and hide it
-        contactForm.reset();
-        inviteForm.classList.add('hidden');
-        inviteBtn.classList.remove('hidden');
+        fetch("https://script.google.com/macros/s/AKfycbwlwkUqE9XeTMxs4kC-K6YUtq7RSRkmDdJtvNB_7bw2FHruDWXOdHIGVWupI3z5PhGNag/exec", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(responseText => {
+            alert(`Thanks, ${name}! Your invite is on the way 🚀`);
+            contactForm.reset();
+            inviteForm.classList.add('hidden');
+            inviteBtn.classList.remove('hidden');
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert("Something went wrong. Try again later.");
+        });
     });
-}); 
-
+});
